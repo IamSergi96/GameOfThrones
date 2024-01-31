@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'GameOfThrones';
+    src: url('../../../public/GameofThrones.ttf') format('woff');
+  }
+  
+  body {
+  font-family: 'GameOfThrones', sans-serif;
+  background-color: black;
+  }
