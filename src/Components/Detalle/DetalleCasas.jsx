@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const DetalleCasas = () => {
   const [casa, setCasa] = useState([]);
@@ -7,7 +8,7 @@ const DetalleCasas = () => {
   useEffect(() => {
     const getCasas = async () => {
       const casaApi = await fetch(
-        "https://game-of-thrones-json-server.vercel.app/houses/${id}"
+        'https://game-of-thrones-json-server.vercel.app/houses/${id}'
       );
       const casaJson = await casaApi.json();
       setCasa(casaJson[0]);
@@ -16,9 +17,9 @@ const DetalleCasas = () => {
     getCasas();
   }, [id]);
 
-  // if (!casa) {
-  //     return null;
-  // } preguntar a los chicos si esto es OK
+  if (!casa) {
+  return null;
+  } 
 
   return;
   <div>
