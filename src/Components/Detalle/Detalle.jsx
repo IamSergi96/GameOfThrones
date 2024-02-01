@@ -11,7 +11,7 @@ const Detalle = () => {
       setCharacter(characterJson[0]);
     };
     getCharacters();
-  }, []);
+  }, [id]);
   return (
     <div className="div">
       <div className="personaje">
