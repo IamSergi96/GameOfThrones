@@ -8,7 +8,7 @@ const DetalleCasas = () => {
   useEffect(() => {
     const getCasas = async () => {
       const casaApi = await fetch(
-        'https://game-of-thrones-json-server.vercel.app/houses/${id}'
+        `https://game-of-thrones-json-server.vercel.app/houses/${id}`
       );
       const casaJson = await casaApi.json();
       setCasa(casaJson[0]);
