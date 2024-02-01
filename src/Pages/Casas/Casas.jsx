@@ -37,7 +37,7 @@ const Casas = () => {
 
       <div className="imgYnom">
         {casasFiltradas.map((casa) => (
-          <section key={casa.id}>
+          <section  key={casa.id}>
             <Link to={`/casas/${casa.id}`}>
               <img src={casa.image} alt="" />
             </Link>

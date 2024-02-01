@@ -25,7 +25,7 @@ const DetalleCasas = () => {
 
   return (
   <div className="detalleCasas">
-  <div className="imgYnom">
+  <div className="imgYnom2">
     <img src={casa.image} alt="" />
     <h2>{casa.name} </h2>
     </div>
