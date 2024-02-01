@@ -13,9 +13,10 @@ const Detalle = () => {
       setPersonaje(resJson);
       console.log(resJson)
     };
-    getCharacter();
+
+    getCharacters();
   }, [id]);
-  
+
   return (
     <div className="div"> 
       <div className="personaje">

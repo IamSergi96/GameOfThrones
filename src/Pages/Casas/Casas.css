@@ -7,6 +7,50 @@
   font-family: 'GameOfThrones', sans-serif;
   }
 
+  .casas {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buscador {
+    width: 100%; 
+    box-sizing: border-box; 
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  
+  }
+
+  input {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'GameOfThrones', sans-serif;
+    
+  }
+
+  .imgYnom {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px;
+  }
+
+  img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+ 
+  }
+
   h3 {
     color: aliceblue;
   }
