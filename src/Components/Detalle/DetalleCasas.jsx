@@ -9,7 +9,9 @@ const DetalleCasas = () => {
   useEffect(() => {
     const getCasas = async () => {
       const casaApi = await fetch(
+
         `http://localhost:3000/houses/${id}`
+
       );
       const casaJson = await casaApi.json();
       setCasa(casaJson);
