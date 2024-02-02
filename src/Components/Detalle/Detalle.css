@@ -10,8 +10,9 @@
   }
   
   .personaje img {
-    max-width: 50%;
-    height: auto;
+    height: 500px;
+    width: auto;
+
   }
 
   .personaje h3 {

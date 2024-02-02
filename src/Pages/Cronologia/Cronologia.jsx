@@ -2,8 +2,8 @@ import "./Cronologia.css";
 import { useState, useEffect } from "react";
 
 export default function Cronologia() {
-  const [characters, setCharacters] = useState(true);
-  const [loading, setLoading] = useState(true);
+  const [characters, setCharacters] = useState([]);
+  const [orderAsc, setOrderAsc] = useState(true);
 
   useEffect(() => {
     const getCharacters = async () => {
@@ -15,34 +15,24 @@ export default function Cronologia() {
         const characterJson = await characterApi.json();
         console.log(characterJson);
         setCharacters(characterJson);
-        setLoading(false);
+
       } catch (error) {
         console.error('Error al obtener los personajes:', error);
-        setLoading(false);
-        // Puedes establecer un estado de error aquí
       }
     };
 
     getCharacters();
   }, []);
 
-  // if (loading) {
-  //   return <div>Cargando...</div>;
-  // }
-
-  // if (!characters) {
-  //   return <div>Error al cargar los personajes. Por favor, inténtalo de nuevo.</div>;
-  // }
-
   const orderByAge = () => {
-    setCharacters(!characters);
+    setOrderAsc(!orderAsc);
   };
 
-  const filteredCharacters = (Array.isArray(characters) ? characters : []).filter((char) => char.age !== null);
-const orderCharacters = [...filteredCharacters].sort((a, b) =>
-  characters ? a.age - b.age : b.age - a.age
-);
+  const filteredCharacters = characters.filter((char) => char.age !== null);
 
+  const orderCharacters = orderAsc
+    ? [...filteredCharacters].sort((a, b) => a.age - b.age) // Orden ascendente
+    : [...filteredCharacters].sort((a, b) => b.age - a.age); // Orden descendente
 
   return (
     <div>
@@ -52,7 +42,7 @@ const orderCharacters = [...filteredCharacters].sort((a, b) =>
             <div className="centrar-todo">
               <div>
                 <button onClick={orderByAge} className="btn-chronology">
-                  {characters ? "⇩" : "⇧"}
+                  {orderAsc ? "⇩" : "⇧"}
                 </button>
                 {orderCharacters.length > 0 ? (
                   <div className="btn-chronology-age">
@@ -84,5 +74,3 @@ const orderCharacters = [...filteredCharacters].sort((a, b) =>
     </div>
   );
 }
-
-
