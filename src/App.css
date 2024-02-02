@@ -1,3 +1,6 @@
+body{
+    background-color: black;
+}
 .lista{
     display: flex;
     flex-direction: row;
