@@ -1,36 +1,48 @@
-
 import "./Cronologia.css";
 import { useState, useEffect } from "react";
 
-export default function Cronologia({ characters }) {
-  const [ageAsc, setAgeAsc] = useState(true);
+export default function Cronologia() {
+  const [characters, setCharacters] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Esta función se ejecutará cuando el componente se monte
     const getCharacters = async () => {
       try {
         const characterApi = await fetch('http://localhost:3000/characters');
+        if (!characterApi.ok) {
+          throw new Error('La respuesta de la red no fue exitosa');
+        }
         const characterJson = await characterApi.json();
-        // console.log(characterJson)
-
+        console.log(characterJson);
+        setCharacters(characterJson);
+        setLoading(false);
       } catch (error) {
         console.error('Error al obtener los personajes:', error);
+        setLoading(false);
+        // Puedes establecer un estado de error aquí
       }
     };
-    // Llama a la función getCharacters cuando el componente se monte
+
     getCharacters();
-  }, []); // El segundo argumento es un array vacío, lo que significa que useEffect solo se ejecutará una vez al montar el componente
-  if (!characters) {
-    return <div>Loading...</div>; // O cualquier otro indicador de carga que desees mostrar
-  }
+  }, []);
+
+  // if (loading) {
+  //   return <div>Cargando...</div>;
+  // }
+
+  // if (!characters) {
+  //   return <div>Error al cargar los personajes. Por favor, inténtalo de nuevo.</div>;
+  // }
+
   const orderByAge = () => {
-    setAgeAsc(!ageAsc);
+    setCharacters(!characters);
   };
 
-  const filteredCharacters = characters.filter((char) => char.age !== null);
-  const orderCharacters = [...filteredCharacters].sort((a, b) =>
-    ageAsc ? a.age - b.age : b.age - a.age
-  );
+  const filteredCharacters = (Array.isArray(characters) ? characters : []).filter((char) => char.age !== null);
+const orderCharacters = [...filteredCharacters].sort((a, b) =>
+  characters ? a.age - b.age : b.age - a.age
+);
+
 
   return (
     <div>
@@ -40,7 +52,7 @@ export default function Cronologia({ characters }) {
             <div className="centrar-todo">
               <div>
                 <button onClick={orderByAge} className="btn-chronology">
-                  {ageAsc ? "⇩" : "⇧"}
+                  {characters ? "⇩" : "⇧"}
                 </button>
                 {orderCharacters.length > 0 ? (
                   <div className="btn-chronology-age">
@@ -72,4 +84,5 @@ export default function Cronologia({ characters }) {
     </div>
   );
 }
+
 
