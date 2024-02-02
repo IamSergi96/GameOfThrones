@@ -1,8 +1,12 @@
+*{
+  color: white;
+}
 .centrar-todo{
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: center;
 }
 
 .personajes {
@@ -69,6 +73,11 @@
     background-color: black;
     z-index: 555555;
     position: relative;
+}
+.contenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contenedor-chronology:nth-child(odd) {
