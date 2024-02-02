@@ -14,7 +14,7 @@ const Detalle = () => {
       console.log(resJson)
     };
 
-    getCharacters();
+    getCharacter();
   }, [id]);
 
   return (
