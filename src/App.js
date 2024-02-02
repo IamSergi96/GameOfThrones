@@ -9,9 +9,13 @@ import { Link } from 'react-router-dom';
 import Detalle from './Components/Detalle/Detalle';
 // import Paginator from './core/paginator/Paginator'
 
+
 function App() {
+
   return (
+
     <>
+  
     <Router>
         <Routes>
           <Route path='/personajes' element={<Personajes/>}></Route>
@@ -38,10 +42,6 @@ function App() {
             </ul>
           </nav>
       </Router>
-      
-      
-
-      
 
     </>
   );

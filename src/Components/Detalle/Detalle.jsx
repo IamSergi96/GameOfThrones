@@ -6,7 +6,7 @@ const Detalle = () => {
   const [personaje, setPersonaje] = useState([]);
   const { id } = useParams();
   useEffect(() => {
-    const getCharacter = async () => {
+    const getCharacters = async () => {
       const res = await fetch(`http://localhost:3000/characters/${id}`);
       console.log(res)
       const resJson = await res.json();
