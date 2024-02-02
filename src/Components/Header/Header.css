@@ -1,14 +1,20 @@
-.flags{
-  position:absolute;
+.flags {
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  z-index: 1;  
-  right: 0px;
-  top: 16px;
-  gap: 16px;
-  padding: 20px 200px 0px 0px;
-  margin: 0px;
- 
-}   
+  justify-content: flex-end;
+  gap: 20px;
+  padding-top: 20px;
+}
 
+.band_img {
+  width: 50px;
+  height: 33px;
+  border-radius: 3px;
+  aspect-ratio: 16/9;
+}
+
+ 
+.band_btn{
+  border: none;
+  background: none;
+  cursor: pointer;
+ }

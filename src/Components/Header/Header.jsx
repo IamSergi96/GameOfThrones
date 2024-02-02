@@ -10,10 +10,11 @@ const Header = () => {
     };
   
     return (
-        <ul Header="flags">
-          <img src="/assets/spanish.png" alt="español logo" onClick={()=>changeLanguage("es")} />
-          <img src="/assets/english.png" alt="english logo" onClick={()=>changeLanguage("en")} />
-        </ul>
-    );
+      <ul className="flags">
+      
+      <button className="band_btn"><img className="band_img" src="/assets/spanish.png" alt="Bandera españa" onClick={()=>changeLanguage("es")} /></button>
+      <button className="band_btn"><img className="band_img" src="/assets/english.png" alt="Bandera inglesa" onClick={()=>changeLanguage("en")} /></button>
+      </ul>
+  );
   };
   export default Header;
