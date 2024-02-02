@@ -1,3 +1,4 @@
+import Header from "../../Components/Header/Header";
 import "./Cronologia.css";
 import { useState, useEffect } from "react";
 
@@ -46,6 +47,7 @@ const orderCharacters = [...filteredCharacters].sort((a, b) =>
 
   return (
     <div>
+        <Header/>
       <div className="contenedor">
         <div className="chronology">
           <div className="timeline">

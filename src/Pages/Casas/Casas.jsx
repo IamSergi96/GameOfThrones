@@ -2,6 +2,7 @@ import React from "react";
 import "./Casas.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Header from "../../Components/Header/Header";
 
 const Casas = () => {
   const [casas, setCasas] = useState([]);
@@ -25,6 +26,9 @@ const Casas = () => {
   );
 
   return (
+    <div>
+      <Header/>
+    
     <div className="casas">
       <div className="buscador">
         <input
@@ -45,6 +49,7 @@ const Casas = () => {
           </section>
         ))}
       </div>
+    </div>
     </div>
   );
 };
