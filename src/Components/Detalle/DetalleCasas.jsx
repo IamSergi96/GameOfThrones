@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./DetalleCasas.css";
 
 const DetalleCasas = () => {
   const [casa, setCasa] = useState([]);
@@ -8,46 +9,64 @@ const DetalleCasas = () => {
   useEffect(() => {
     const getCasas = async () => {
       const casaApi = await fetch(
-        `https://game-of-thrones-json-server.vercel.app/houses/${id}`
+
+        `http://localhost:3000/houses/${id}`
+
       );
       const casaJson = await casaApi.json();
-      setCasa(casaJson[0]);
+      setCasa(casaJson);
+      console.log(casaJson);
     };
 
     getCasas();
   }, [id]);
 
   if (!casa) {
-  return null;
-  } 
+    return <div>Cargando...</div>;
+  }
 
-  return;
-  <div>
-    <h3>{casa.name} </h3>
+  return (
+  <div className="detalleCasas">
+  <div className="imgYnom">
     <img src={casa.image} alt="" />
-    <span>Settlement:{casa.settlement} </span>
-    <span>Región:{casa.region} </span>
+    <h2>{casa.name} </h2>
+    </div>
+    <div className="horizontal">
+    <div className="group">
+    <h3>Asentamiento</h3>
+    <p>{casa.settlement}</p> 
+    </div>
+    <div className="group">
+    <h3>Región </h3>
+    <p>{casa.region} </p>
+    </div>
 
-    <div>
-      <ul>
-        Alianzas:
-        {casa.alliances.map((alianza, index) => (
+    <div className="group">
+    <h3>Alianzas</h3> 
+      <ul className="alianzas">
+         {casa.alliances?.map((alianza, index) => (
           <li key={index}>{alianza}</li>
         ))}
       </ul>
-    </div>
+      </div>
 
-    <div>
-      <ul>
-        Religiones:
-        {casa.religions.map((religion, index) => (
+    
+    <div className="group">
+   <h3>Religiones</h3> 
+      <ul className="religiones">
+        {casa.religions?.map((religion, index) => (
           <li key={index}>{religion}</li>
         ))}
       </ul>
+      </div>
+    
+    <div className="group">
+    <h3>Fundación</h3>
+    <p>{casa.foundation}</p>
     </div>
-
-    <span>{casa.foundation} </span>
-  </div>;
+    </div>
+  </div>
+  )
 };
 
 export default DetalleCasas;
