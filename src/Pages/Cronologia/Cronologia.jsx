@@ -1,3 +1,4 @@
+import Header from "../../Components/Header/Header";
 import "./Cronologia.css";
 import { useState, useEffect } from "react";
 
@@ -36,6 +37,7 @@ export default function Cronologia() {
 
   return (
     <div>
+        <Header/>
       <div className="contenedor">
         <div className="chronology">
           <div className="timeline">

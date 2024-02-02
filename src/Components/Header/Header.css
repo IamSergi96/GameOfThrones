@@ -1,0 +1,14 @@
+.flags{
+  position:absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  z-index: 1;  
+  right: 0px;
+  top: 16px;
+  gap: 16px;
+  padding: 20px 200px 0px 0px;
+  margin: 0px;
+ 
+}   
+
