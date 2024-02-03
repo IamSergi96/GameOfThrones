@@ -38,7 +38,7 @@ function App() {
             </li>
             <li>
               <Link to="/casas">
-                <h3>{t("CASAS")} </h3>
+                <h3>{t('CASAS')} </h3>
               </Link>
             </li>
             <li>

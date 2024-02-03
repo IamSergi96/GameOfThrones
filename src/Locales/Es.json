@@ -1,9 +1,9 @@
 {
   "character": "personaje",
-  "characters": "personajes",
+  "PERSONAJES": "personajes",
   "name": "nombre",
   "house": "casa",
-  "houses": "casas",
+  "CASAS": "casas",
   "parents": "padres",
   "siblings":"hermanos",
   "title": "titulo",
@@ -15,9 +15,10 @@
   "region": "region",
   "religions":"religiones",
   "foundation":  "fundacion",
-  "chronology": "cronologia",
+  "CRONOLOGIA": "cronologia",
   "search":"Buscar",
   "got": "Juego de Tronos",
-  "back": "Volver"
+  "back": "Volver",
+  "HOME": "Home"
   }
   
