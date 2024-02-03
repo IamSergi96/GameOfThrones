@@ -23,6 +23,7 @@
     align-items: center;
     justify-content: center;
     margin: 10px;
+    color: black;
   
   }
 
@@ -34,6 +35,7 @@
     border-radius: 5px;
     outline: none;
     font-family: 'GameOfThrones', sans-serif;
+    color: black
     
   }
 
