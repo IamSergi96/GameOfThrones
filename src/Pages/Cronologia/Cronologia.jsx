@@ -37,7 +37,7 @@ export default function Cronologia() {
 
   return (
     <div>
-        <Header/>
+ 
       <div className="contenedor">
         <div className="chronology">
           <div className="timeline">

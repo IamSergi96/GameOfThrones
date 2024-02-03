@@ -7,7 +7,7 @@ import Header from "../../Components/Header/Header";
 const Casas = () => {
   const [casas, setCasas] = useState([]);
   const [filtro, setFiltro] = useState("");
-  // preguntar a los chicos
+ 
 
   useEffect(() => {
     const getCasas = async () => {
@@ -27,7 +27,7 @@ const Casas = () => {
 
   return (
     <div>
-      <Header/>
+     
     
     <div className="casas">
       <div className="buscador">

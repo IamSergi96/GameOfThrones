@@ -1,12 +1,13 @@
 import React from "react";
 import "./Header.css";
-import i18n from "i18next";
 import {useTranslation} from "react-i18next";
+import i18n from "../../i18n";
+
 
 const Header = () => {
-    const { t, i18n }= useTranslation(["translation"]);
-    const changeLanguage = (code)=>{
-     i18n.changeLanguage(code)
+    const { i18n }= useTranslation();
+    const changeLanguage = (lang)=>{
+     i18n.changeLanguage(lang)
     };
   
     return (
