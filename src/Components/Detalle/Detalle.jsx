@@ -1,37 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import './Detalle.css'
 
 const Detalle = () => {
-  const [character, setCharacter] = useState([]);
+  const [personaje, setPersonaje] = useState([]);
   const { id } = useParams();
   useEffect(() => {
     const getCharacters = async () => {
-      const characterApi = await fetch(`http://localhost:3000/character/${id}`);
-      const characterJson = await characterApi.json();
-      setCharacter(characterJson[0]);
+      const res = await fetch(`http://localhost:3000/characters/${id}`);
+      console.log(res)
+      const resJson = await res.json();
+      setPersonaje(resJson);
+      console.log(resJson)
     };
+
     getCharacters();
-  }, []);
+  }, [id]);
+
   return (
-    <div className="div">
+    <div className="div"> 
       <div className="personaje">
-        <img src={character.image} alt={character.name} />
-        <h3>{character.name}</h3>
+        <img src={personaje.image} alt={personaje.name} />
+        <h3>{personaje.name}</h3>
       </div>
       <div className="info">
         <div className="info2">
-          <h2>{character.house}</h2>
-        </div>
-        <div className="info2">
           <h2>CASA</h2>
-          <p> {character.house}</p>
+          <p className="casaclass"> {personaje.house}</p>
         </div>
         <div className="info2">
           <h2>ALIANZAS</h2>
           <ul>
-            {" "}
-            {character.alliances.map((item, index) => (
-              <div key={item}>
+            {personaje.alliances?.map((item, index) => (
+              <div key={index}>
                 <li>{item}</li>
               </div>
             ))}
@@ -40,9 +41,8 @@ const Detalle = () => {
         <div className="info2">
           <h2>APARICIONES</h2>
           <ul>
-            {" "}
-            {character.episodes.map((item, index) => (
-              <div key={item}>
+            {personaje.episodes?.map((item, index) => (
+              <div key={index}>
                 <li>{item}</li>
               </div>
             ))}
@@ -51,9 +51,8 @@ const Detalle = () => {
         <div className="info2">
           <h2>FAMILIARES</h2>
           <ul>
-            {" "}
-            {character.simblings.map((item, index) => (
-              <div key={item}>
+            {personaje.simblings?.map((item, index) => (
+              <div key={index}>
                 <li>{item}</li>
               </div>
             ))}
@@ -62,9 +61,8 @@ const Detalle = () => {
         <div className="info2">
           <h2>TITULOS</h2>
           <ul>
-            {" "}
-            {character.titles.map((item, index) => (
-              <div key={item}>
+            {personaje.titles?.map((item, index) => (
+              <div key={index}>
                 <li>{item}</li>
               </div>
             ))}
@@ -73,9 +71,8 @@ const Detalle = () => {
         <div className="info2">
           <h2>PADRES</h2>
           <ul>
-            {" "}
-            {character.parents.map((item, index) => (
-              <div key={item}>
+            {personaje.parents?.map((item, index) => (
+              <div key={index}>
                 <li>{item}</li>
               </div>
             ))}

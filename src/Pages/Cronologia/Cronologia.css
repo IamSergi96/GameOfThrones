@@ -1,9 +1,102 @@
-@font-face {
-    font-family: 'GameOfThrones';
-    src: url('../../../public/GameofThrones.ttf') format('woff');
+*{
+  color: white;
+}
+.centrar-todo{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.personajes {
+  text-align: center;
+
+  .chrono_img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
   }
-  
-  body {
-  font-family: 'GameOfThrones', sans-serif;
+}
+
+.chronology {
   background-color: black;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  overflow-y: scroll;
+  height: 77vh;
+  width: 1300px;
+}
+
+.chronology::-webkit-scrollbar {
+  width: 4px;
+  background-color: #443d3d;
+}
+
+.chronology::-webkit-scrollbar-thumb {
+  width: 4px;
+  background-color: white;
+  background-clip: content-box;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn-chronology {
+    border: 2px solid white;
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    color: white;
+    text-align: center;
+    background-color: black;
+    margin-bottom: 70px;
+    margin-left: 11px;
+}
+
+.btn-chronology-age {
+    border: 2px solid white;
+    border-radius: 100px;
+    background: none;
+    color: white;
+    text-align: center;
+    margin-bottom: 70px;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    z-index: 555555;
+    position: relative;
+}
+.contenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-chronology:nth-child(odd) {
+  border-top: 2px solid white;
+  margin-left: 99%;
+  width: 350px;
+}
+.contenedor-chronology:nth-child(even) {
+  border-top: 2px solid white;
+  margin-right: 101%;
+  width: 350px;
+}
+.btn-chronology::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background-color: white;
+  top: 31px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
